@@ -1,0 +1,14 @@
+Include personal auto classes -
+First program Risk level coverage code - comment class condition
+claims queries
+2.2 Remove EASLOBCode = 193
+2.3 Remove code for Payment amount for 2026 - Amount_correction_df
+2.4 Update liability df to remove code for 2026 amount
+2.5 Remove code for Physical damage - Property_df
+2.6 Remove 193 and 212 from ALAE code - claim_allocatedLoss
+Remove code for TermEffectiveDate Filter
+After the end remove the records with ASLOB = 193 and 212
+Add condition for Earned premium
+Add logic for class mapping and other mappings
+prepare the pre-report data
+Update report generation code
