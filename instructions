@@ -12,3 +12,99 @@ Add condition for Earned premium
 Add logic for class mapping and other mappings
 prepare the pre-report data
 Update report generation code
+
+
+
+
+
+
+=== 1. Files in the default Lakehouse 'Files' folder ===
+    ASOLB_Manual_update.csv
+    BA PLUS-UpdateASLOB.csv
+    Claim_Policy_NewApproachData
+    Claim_to_policy_Via_GUIDS_NewApproach
+    Class Codes without Exposure.csv
+    Class Codes without Exposure.xlsx
+    ClassesWithClaimInd_9.csv
+    ClassesWithClaimInd_9.xlsx
+    Commercial Auto - NISS Mapping-Updated(Main Mapping).csv
+    Commercial Auto - NISS Mapping-Updated.xlsx
+    Commercial Auto Classes.xlsx
+    Commercial Auto_NISS_Mapping.csv
+    Corrected_Class_code.csv
+    DataFix-Claims.csv
+    DataFix-ForOffsetRecordsWithoutReferenceData.csv
+    DeleteDuplicateCoveragesFromSTATExtract.csv
+    Exception_code_Mapping.csv
+    FactClaims-GUIDFile-AllCommercialAutoClaims(Sheet1).csv
+    FactClaims-GUIDFile-AllCommercialAutoClaims_CauseOfLoss.csv
+    First_NISS_FORMAT_FILE
+    HasPIPVUWC_New.csv
+    IBMI + Origami ZIPCode and Zip EXT.csv
+    IL-FireCodes.csv
+    Main Mapping - NISS - 06052026(in).csv
+    Main Mapping-Updated.csv
+    Main Mapping-Updated_NISS_Col - 1.csv
+    Main Mapping-Updated_NISS_Col - Copy - Removed Duplicate.csv
+    Main Mapping-Updated_NISS_Col.csv
+    Missing_ZIP_Code.csv
+    NISS_COLUMN_MAPPING.csv
+    NISS_Column_Mapping-Updated.csv
+    NISS_Column_Mapping.csv
+    NISS_Mapping.csv
+    NISS_Mapping_New.csv
+    NISS_Mapping_latest.csv
+    NISS_Mapping_latest.xlsx
+    NISS_Reports
+    NissCauseofloss_df.csv
+    No_HasPIPVUWCCoveredInd
+    Offset_Ref_record_check
+    Only_claim
+    Policy Data - PPP902- For Claims - Premium mapping using Unit No.csv
+    Policy_to_claim_via_GUID
+    Pre_Final_Report_File
+    RemainingClaim_to_policy_Via_UnitNumber_NewApproach
+    Reverse_claim_policy_Via_UnitNumber
+    Reverse_claim_to_policy
+    SUMMARYFILE
+    Territory_code_2026.csv
+    TransmittalFILE
+    ZIPANDFIREDISTICCODE
+    ZIP_Further_fix.csv
+    final_enriched_df
+
+=== 2. Lookup CSV files ===
+[OK] Files/DeleteDuplicateCoveragesFromSTATExtract.csv
+[OK] Files/ASOLB_Manual_update.csv
+[OK] Files/BA PLUS-UpdateASLOB.csv
+[OK] Files/HasPIPVUWC_New.csv
+[OK] Files/NISS_Column_Mapping-Updated.csv
+[OK] Files/Corrected_Class_code.csv
+[OK] Files/DataFix-ForOffsetRecordsWithoutReferenceData.csv
+[OK] Files/DataFix-Claims.csv
+
+=== 3. Source tables ===
+[OK] ODS_STATS_TBLS_LH.policy_policy_detail_info (56 columns)
+[OK] ODS_STATS_TBLS_LH.policy_Product_info (28 columns)
+[OK] ODS_STATS_TBLS_LH.policy_risk_item_info (35 columns)
+[OK] ODS_STATS_TBLS_LH.policy_coverage_info (60 columns)
+[OK] ODS_STATS_TBLS_LH.policy_question_answer (28 columns)
+[OK] DMAnalytics.FactClaimsMonthlyDataStore (122 columns)
+[OK] DMAnalytics.FactClaims (187 columns)
+
+=== 4. Earned-premium date columns in policy_policy_detail_info ===
+   transaction effective  -> NOT FOUND
+   term expiration        -> TermExpirationDate
+   date-like columns in table: ['BookDate', 'CurrentTermAmount', 'EffectiveDate', 'ExpirationDate', 'FullTermAmount', 'ModifiedDateTime', 'PolicyInceptionDate', 'TermEffectiveDate', 'TermExpirationDate', 'TermNumber', 'TermType']
+
+=== 5. Class workbook ===
+   found locally: /lakehouse/default/Files/Commercial Auto Classes.xlsx
+   sheets in workbook: ['Requirements', 'Manual Pages', 'Primary Class', 'Public Auto', 'OTHR']
+[OK] sheet 'Public Auto': 30 rows, columns ['Primary Class', 'Cost Containment Class', 'Rule/Table', 'Public Use']
+   classes used: ['3C']
+[OK] sheet 'Primary Class': 102 rows, columns ['Primary Class', 'Cost Containment Class', 'Rule/Table']
+   classes used: ['1A', '2A']
+
+=== SUMMARY ===
+1 problem(s) found:
+ - No transaction effective date column found. Pick from the list below.
